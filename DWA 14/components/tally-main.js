@@ -22,8 +22,10 @@ class TallyMain extends LitElement {
       display: flex;
     }
     .counter__button {
-      color: #00ced1;
-      background: #333333;
+      color: cyan;
+      background: linear-gradient(to bottom, red, yellow);
+      background-size: 100% 200%;
+      animation: gradientAnimation 5s linear infinite;
       width: 50%;
       height: 10rem;
       border-width: 0;
@@ -32,9 +34,9 @@ class TallyMain extends LitElement {
       border-bottom: 1px solid #4c4e53;
       transition: transform 0.3s;
       transform: translateY(0);
-    }
+    } 
     .counter__button:active {
-      background: #424250;
+      background: black;
       transform: translateY(2%);
     }
     .counter__button:disabled {
@@ -44,7 +46,7 @@ class TallyMain extends LitElement {
       padding-top: 90px;
       display: flex;
       justify-content: center;
-      border-bottom: 1px solid #4c4e53;
+      
     }
     .reset_button {
       padding:2.6rem;
