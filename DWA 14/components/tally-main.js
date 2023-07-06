@@ -1,7 +1,4 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/extensions */
 import { html, css, LitElement } from '../Libs/lit-html.js';
-
 class TallyMain extends LitElement {
   static styles = css`
     .settings-save {
@@ -46,7 +43,6 @@ class TallyMain extends LitElement {
       padding-top: 90px;
       display: flex;
       justify-content: center;
-      
     }
     .reset_button {
       padding:2.6rem;
@@ -58,24 +54,20 @@ class TallyMain extends LitElement {
       z-index: 9999;
       background-color: white;
       border-radius:40px;
-      
     }
   `;
-
   static properties = {
     count: { type: Number },
     minReached: { type: Boolean },
     maxReached: { type: Boolean },
     reset: { type: Boolean },
   };
-
   constructor() {
     super();
     this.count = 0;
     this.minReached = false;
     this.maxReached = false;
   }
-
   increment() {
     if (this.count < 15) {
       this.count += 1;
@@ -86,7 +78,6 @@ class TallyMain extends LitElement {
       this.maxReached = true;
     }
   }
-
   decrement() {
     if (this.count > -15) {
       this.count -= 1;
@@ -97,14 +88,12 @@ class TallyMain extends LitElement {
       this.minReached = true;
     }
   }
-
   restart() {
     this.count = 0;
     this.minReached = false;
     this.maxReached = false;
     this.reset = true;
   }
-
   render() {
     return html`
       <main>
@@ -133,5 +122,4 @@ class TallyMain extends LitElement {
     `;
   }
 }
-
 customElements.define('tally-main', TallyMain);
