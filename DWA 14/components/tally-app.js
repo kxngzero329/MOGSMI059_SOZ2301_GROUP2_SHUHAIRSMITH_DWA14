@@ -1,10 +1,7 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/extensions */
 import { html, LitElement } from '../Libs/lit-html.js';
 import './tally-header.js';
 import './tally-main.js';
 import './tally-footer.js';
-
 class TallyApp extends LitElement {
   render() {
     return html`
@@ -14,5 +11,4 @@ class TallyApp extends LitElement {
     `;
   }
 }
-
 customElements.define('tally-app', TallyApp);
