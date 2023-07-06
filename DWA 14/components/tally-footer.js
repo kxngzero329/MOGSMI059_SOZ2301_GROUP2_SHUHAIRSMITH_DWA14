@@ -1,11 +1,5 @@
-
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/extensions */
 import { html, LitElement } from '../Libs/lit-html.js';
-
 class TallyFooter extends LitElement { 
-
-  
   render() {
     return html`
       <footer style ="text-align:center; margin:auto; padding-top:50px; font-size:25px; color:white">
@@ -15,5 +9,4 @@ class TallyFooter extends LitElement {
     `;
   }
 }
-
 customElements.define('tally-footer', TallyFooter)
