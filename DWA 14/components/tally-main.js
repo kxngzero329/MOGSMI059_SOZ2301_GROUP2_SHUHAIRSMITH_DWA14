@@ -9,7 +9,10 @@ class TallyMain extends LitElement {
       font-size: 1.5rem;
     }
     .counter__value {
+      color: orange;
+      background-color: grey;
       width: 100%;
+      border-width: 0;
       height: 15rem;
       text-align: center;
       font-size: 6rem;
@@ -54,20 +57,24 @@ class TallyMain extends LitElement {
       z-index: 9999;
       background-color: white;
       border-radius:40px;
+      
     }
   `;
+
   static properties = {
     count: { type: Number },
     minReached: { type: Boolean },
     maxReached: { type: Boolean },
     reset: { type: Boolean },
   };
+
   constructor() {
     super();
     this.count = 0;
     this.minReached = false;
     this.maxReached = false;
   }
+
   increment() {
     if (this.count < 15) {
       this.count += 1;
@@ -78,6 +85,7 @@ class TallyMain extends LitElement {
       this.maxReached = true;
     }
   }
+
   decrement() {
     if (this.count > -15) {
       this.count -= 1;
@@ -88,12 +96,14 @@ class TallyMain extends LitElement {
       this.minReached = true;
     }
   }
+
   restart() {
     this.count = 0;
     this.minReached = false;
     this.maxReached = false;
     this.reset = true;
   }
+
   render() {
     return html`
       <main>
@@ -122,4 +132,5 @@ class TallyMain extends LitElement {
     `;
   }
 }
+
 customElements.define('tally-main', TallyMain);
